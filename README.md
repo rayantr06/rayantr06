@@ -1,87 +1,102 @@
+<div align="center">
+
 # Rayan Terki
 
-**Independent AI Engineer**
+### AI Developer — Building production AI systems where standard models fall short
 
-I help companies turn a fuzzy "we should probably use AI somewhere" into a system that actually runs in production.
+📍 Gatineau, QC, Canada &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/rayan-terki) &nbsp;·&nbsp; [Email](mailto:rayantrk06@gmail.com)
 
-Based in Ottawa–Gatineau · Remote worldwide · EN · FR · AR
-
----
-
-## What I do
-
-Most AI projects fail in the same place: the gap between "we have an idea" and "we have a system that works in our real environment, with our real data, used by our real people."
-
-I close that gap.
-
-I take on the entire chain — from the first conversation with a team that doesn't yet know what they want, to a deployed system that runs in production. I analyze the domain, identify where AI actually adds value (and where it doesn't), design the architecture, build the missing pieces (collection tools, annotation workflows, validation pipelines, data augmentation), integrate the AI layer, and ship it.
-
-I know what AI can do. More importantly, I know what it can't do, and where a simpler solution is the correct answer.
-
----
-
-## What I've built
-
-**[RamyPulse](https://github.com/Leticia-Bouchenna/Ramy-Pulse)** — Multi-tenant SaaS platform for multilingual marketing intelligence. End-to-end architecture: scraping across four channels, normalization across FR/AR/darija/arabizi, fine-tuned sentiment classifier (DziriBERT), hybrid RAG with Reciprocal Rank Fusion, alert and recommendation agents, 8-page UI. 33 SQL tables · 51 API endpoints · 890 passing tests · Python · FastAPI · React.
-
-**[let-data-dz.dev](https://let-data-dz.dev)** — Live crowdsourcing platform for voice data collection in low-resource languages. Designed, built, and deployed solo. 14 emergency scenario categories · caller/operator role selection · recording and validation flow · dataset export. JavaScript · Web Audio API · Node.js.
-
-**DGPC Pipeline** — Production ASR/NLP pipeline for multilingual emergency call processing (Protection Civile, Béjaïa). Built the full data chain: collection app, IA-assisted annotation, collaborative verification, synthetic augmentation. *Tools public — data confidential.* Python · Whisper · Gemini · Streamlit.
-
-**[Emergency Lang Kit](https://github.com/rayantr06/emergency-lang-kit)** — Open-source framework for language-agnostic emergency response systems. Kernel + Language Packs architecture. Python · FastAPI.
+</div>
 
 ---
 
 ## How I work
 
-**Discovery** — 1 week. I dig into your domain, your data, your workflows. I come back with a concrete plan: what to build, what not to build, what it costs, what it takes. Fixed price: **2,000 CAD**. If the plan doesn't give you clarity, you don't pay.
+I start from a real problem, not from a solution looking for one.
 
-**Build** — 3 to 8 weeks. I build the full solution: data pipeline, tools, AI integration, deployment. Success criteria are defined together before we start. If the final system doesn't meet them, you don't pay. Scope and price set after discovery.
+When I hit something I don't know how to solve, I research — papers, methodologies, what others have actually shipped in similar contexts — until I find an approach that fits the constraints of the specific problem. Then I adapt it. I don't apply methods blindly; I keep what works for the case at hand and discard what doesn't.
 
-**Partner** — 3 to 6 months. For ambitious projects that need continuous iteration. I operate as your part-time head of AI.
+When I build, I build for the person who'll actually use the system — an annotator who needs to label hundreds of audio files, a marketing team that needs to act on consumer signals, a Béjaïa resident recording emergency scenarios on their phone. Generic features don't ship value. Features designed around the real workflow do.
 
-I'm taking on my first freelance clients. I'm comfortable working under outcome-based terms because I'd rather build a portfolio of real case studies than collect deposits on projects that never ship.
+I use AI coding assistants (Claude Code, Cursor, Antigravity, Codex, Gemini) the way an accountant uses a calculator — as acceleration on operations I understand, not as a substitute for understanding. I review what they produce, recognize when something's off, and know how to fix it. I orchestrate multiple tools in parallel because each is good at different things, and I've spent the last 18 months learning which one for which job.
 
----
-## Specialties
-
-**Small Language Models & sovereign AI** — I follow Pleias' work closely: 1B-parameter specialized models beating 7x bigger generic LLMs on RAG, SYNTH synthetic training data, offline deployment. For clients who care about cost, data privacy, or vendor independence, I design systems that don't rely on OpenAI or Anthropic APIs.
-
-**Full chain from zero** — Most clients don't have clean data, defined problems, or in-house tech. I cover the entire path: discovery, data collection, annotation, validation, augmentation, model integration, deployment.
-
-**Production-grade over demos** — Clean architecture, tests, evals, monitoring, cost control. I'd rather ship something smaller that actually runs than a prototype that breaks the day you show it to a client.
+This is how I've built two real-world AI systems and one open-source project over the past 18 months.
 
 ---
 
-I work across domains — marketing intelligence, voice processing, business automation, data platforms. Multilingual systems (FR / EN / AR including dialects) are part of my toolkit when relevant, but they're not a prerequisite. The core skill is building AI systems that solve a defined business problem end-to-end, in whatever language or industry the client needs.
+## Projects
 
-## Stack
-**Languages & core** — Python · TypeScript · JavaScript · SQL · Bash
+### 📊 [RamyPulse](https://github.com/rayantr06/ramypulse) — Marketing intelligence for Algerian brands
 
-**AI / ML** — PyTorch · Hugging Face Transformers · LangChain · LangGraph · FAISS · BM25 · sentence-transformers · Whisper · custom fine-tuning (QLoRA, PEFT) · model distillation
+**The problem.** Algerian consumers leave thousands of comments daily on social media in Darija, Arabizi, and French — often code-switched in the same sentence. No standard NLP tool processes this reliably. Brands operating in this market have no way to know what's working and what's not.
 
-**Agentic systems** — autonomous research loops · multi-agent orchestration · structured outputs · tool-use · MCP · eval frameworks
+**What I built.** End-to-end SaaS platform: ingestion from 5 social platforms, hybrid NLP pipeline, multi-tenant FastAPI backend with 28-table SQLite schema and in-code migrations, React 18 + Vite 7 frontend with 9 pages designed around marketing workflows (NSS dashboard, campaign impact analysis with pre/active/post windows, RAG-powered conversational explorer, alert engine, AI recommendations, What-If simulator).
 
-**LLM providers** — OpenAI · Anthropic · Google (Gemini) · Ollama (local) · vLLM
+**Why it's interesting.** I designed for system uncertainty from day one. The 4-tier inference fallback (DziriBERT → Gemini → Ollama → lexicon with safe neutral logits) exists because LLMs fail in unpredictable ways and the system can't crash. The ABSA adapter distinguishes cross-phrase sarcasm from legitimate mixed opinions through inter-aspect scanning, with `reason` fields on every annotation for traceability. The 20 hand-crafted adversarial test cases target exactly the failure modes the base model has — sarcasm, ironic emojis, dense code-switching, French litotes. 890+ tests across the platform because behavior in production matters more than a benchmark number.
 
-**Data engineering** — Apify · SerpAPI · Playwright · Parquet · JSONL · data augmentation pipelines · synthetic dataset generation
+Presented at AI Expo 2026 — Industry Track, attracting direct partnership interest from a major Algerian FMCG company. Built in collaboration with Leticia Bouchenna (M2 Data Science, Université de Béjaïa) who led data collection, partnerships, and academic presentation.
 
-**Storage & infra** — PostgreSQL · SQLite · Docker · FastAPI · Streamlit · Next.js · Tailwind
-
-**Workflow** — Git · uv · pytest · pre-commit · CI pipelines
-
----
-"I follow the frontier daily — Karpathy's autoresearch patterns, Pleias' SLM and SYNTH methodology, new agentic architectures — and I build my own implementations. My job is to know which of these actually ship in production and which are demos
+`Python` `FastAPI` `React 18` `TypeScript` `Vite 7` `SQLite` `FAISS` `BM25` `DziriBERT` `Gemini` `Ollama` `PyTorch` `HuggingFace` `Docker`
 
 ---
 
-## Get in touch
+### 🎙️ DGPC — Emergency-call AI pipeline for low-resource Kabyle
 
+**The problem.** The Direction Générale de la Protection Civile of Béjaïa receives emergency calls in Kabyle EOR — a Berber dialect with virtually zero NLP resources. No ASR model handles it well. No annotation methodology applies directly. The downstream stakes are high: a misclassified emergency call has real consequences.
 
-rayantrk06@gmail.com 
+**How the project unfolded — each component answers a problem I hit in the previous one.**
 
-https://www.linkedin.com/in/rayan-tr-terki-271350318
+I started by designing the annotation schema with 15 DGPC-specific fields including the operator's rationale (`notes_cot`), then annotated 506 real calls. *Leticia couldn't annotate everything manually* → I built a Streamlit annotation app with Gemini 3 Flash assistance: Gemini does the heavy lift, the human corrects. *Data still insufficient* → I researched, found Pleias SYNTH methodology, read their publication, adapted it to Kabyle EOR: Memory Core with 47K verified entries from academic sources (FarZ1, Belkacem, KabyleNLP), 2-layer hybrid RAG with adaptive fusion based on scenario complexity, Kabyle Guard quality filter (7 blocking rules + 11 calibrated quality penalties), 384 validated synthetic scenarios produced. *We also need audio, not just text* → tried TTS, quality wasn't good enough for low-resource Kabyle, pivoted to participatory voice collection: I built a deployed web app where Béjaïa residents record scenarios on their phone, designed for non-technical users — 958 recordings collected. *Long calls need chunking for ASR training* → tried pyannote diarization, results weren't usable, switched to MMS forced alignment with a reframed approach: "the data is verified, there's nothing to throw away — I just need to find the chunk boundaries." *Some participants gamed the recording* → designed an empirical calibration: selected 15 trusted speakers, computed thresholds on their data (ROC AUC 0.9572), used those thresholds to validate everyone else's recordings.
 
-[calendly when ready]
+Then I reframed evaluation itself. WER on Whisper-small came out at 0.88 — basically useless by classic ASR metrics. Instead of pivoting to a different model, I redefined the metric: `LocationScore`, `VictimCountScore`, `SeverityScore`, `IncidentTypeScore`, `CriticalCueF1`. What matters in production isn't transcription beauty — it's whether the downstream extractor can recover the intervention information.
 
-I reply within 24 hours.
+**Why it's interesting.** Every component exists because a specific real-world problem made it necessary. The project is an end-to-end data engine: real annotations → synthetic generation grounded in verified linguistic resources → human voice collection → forced alignment with empirical calibration → ASR fine-tuning experiments (Whisper, Qwen3-ASR, NeMo) → task-oriented evaluation framework.
+
+Built in collaboration with Leticia Bouchenna (M2 Data Science, Université de Béjaïa) who led the partnership with Direction Générale de la Protection Civile de Béjaïa.
+
+`Python` `FastAPI` `Flask` `Streamlit` `Gemini` `PyTorch` `torchaudio` `MMS` `Whisper` `Qwen3-ASR` `NeMo` `QLoRA` `Google Apps Script`
+
+---
+
+### 🚨 [Emergency Lang Kit (ELK)](https://github.com/rayantr06/emergency-lang-kit) — Personal open-source
+
+Modular AI architecture (Kernel + Plugins pattern), hybrid RAG (ChromaDB dense + FAISS sparse), Whisper fine-tuning via QLoRA for low-resource languages, FastAPI services with strict Pydantic validation, HITL review mechanisms, pytest functional tests, full Docker stack with documented HLD + LLD architecture.
+
+`Python` `FastAPI` `OpenAI` `LLaMA 3` `ChromaDB` `FAISS` `Whisper` `QLoRA` `pytest` `Docker`
+
+---
+
+## Tech I work with
+
+**Backend** &nbsp; Python · FastAPI · Flask · Pydantic · SQLite · multi-tenant architecture · in-code schema migrations
+
+**Frontend** &nbsp; React 18 · TypeScript · Vite 7 · Playwright E2E · type-safe API contracts
+
+**LLM integration** &nbsp; OpenAI · Gemini (Flash & Pro) · LLaMA 3 / Ollama · structured JSON output · graceful degradation · multi-tier fallback patterns
+
+**ML & fine-tuning** &nbsp; PyTorch · HuggingFace Transformers · DziriBERT · Whisper · Qwen3-ASR · NeMo · QLoRA · knowledge distillation · Focal Loss
+
+**RAG & retrieval** &nbsp; FAISS · BM25 · ChromaDB · Reciprocal Rank Fusion · adaptive retrieval budgets
+
+**Data engineering** &nbsp; synthetic data generation · MMS forced alignment · audio preprocessing · empirical threshold calibration · adversarial test design
+
+**AI-accelerated development** &nbsp; Claude Code · Cursor · Antigravity / Codex · GitHub Copilot · multi-agent orchestration with frozen interface contracts and TDD-first discipline
+
+**Infrastructure** &nbsp; Docker · GitHub Actions · Streamlit · Google Apps Script
+
+---
+
+## Background
+
+- **DEC in Computer Programming** — Collège La Cité, Ottawa (2023–2026)
+- **Preparatory Classes in CS & Mathematics** — ESTIN, Béjaïa, Algeria (2021–2023)
+- 18 months of independent AI engineering on real-world projects
+- Languages: French (native) · English (professional) · Arabic (native) · Kabyle (native)
+
+---
+
+## Currently
+
+Looking for an AI / ML developer role in Canada — Gatineau, Ottawa, Montreal, or remote. I'm looking for a team where I can keep doing what I've been doing: starting from real problems, building maintainable systems, and using AI as an engineering tool rather than a magic wand.
+
+📧 **rayantrk06@gmail.com** &nbsp;·&nbsp; 💼 [LinkedIn](https://linkedin.com/in/rayan-terki) &nbsp;·&nbsp; 📍 Gatineau, QC, Canada 🇨🇦
