@@ -20,7 +20,7 @@ A bilingual marketplace connecting clients with independent security agents. I c
 
 ### [Alerte IA](https://github.com/rayantr06/alerte-ia-prototype)
 
-<img src="assets/project-covers/alerte-ia-flow.png" alt="Alerte IA workflow illustration: audio, transcription and structured incident information for operator validation" width="280" />
+<img src="assets/project-covers/alerte-ia-flow-rescue.png" alt="Alerte IA workflow illustration: audio, transcription and structured incident information for operator validation" width="280" />
 
 Software development for a collaborative emergency-call research prototype: collection and annotation tools, model integration, and an operator interface for transcription and structured incident information. The application combines a FastAPI backend with a Next.js/TypeScript frontend.
 
