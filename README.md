@@ -4,6 +4,8 @@
 
 Based in Canada. I build web applications, backend APIs and software tools that connect data, models and user workflows.
 
+Authorized to work in Canada with a valid Post-Graduation Work Permit. Professional working proficiency in French and English.
+
 ## Selected projects
 
 ### [LIDAL Pulse](https://github.com/rayantr06/LIDALPulse)
@@ -50,8 +52,9 @@ Team ASP.NET Core MVC application. My contributions include interface improvemen
 - **Frontend:** TypeScript, JavaScript, React, Next.js, HTML/CSS
 - **Data:** SQL, PostgreSQL, SQLite, Entity Framework Core
 - **Quality:** pytest, xUnit, Playwright, integration tests
+- **Tools & Cloud:** Git, Docker, Azure
 - **Applied AI:** NLP, speech processing and model integration
 
 I'm interested in backend, full-stack and applied AI software development roles in Canada.
 
-[LinkedIn](https://www.linkedin.com/in/rayan-terki/)
+[Portfolio](https://rayantr06.github.io/Portfolio-/) · [Résumé (PDF)](https://rayantr06.github.io/Portfolio-/Rayan-Terki-Resume-EN.pdf) · [LinkedIn](https://www.linkedin.com/in/rayan-terki/)
