@@ -8,6 +8,12 @@ Authorized to work in Canada with a valid Post-Graduation Work Permit. Professio
 
 ## Selected projects
 
+### [Alerte IA](https://github.com/rayantr06/alerte-ia-prototype)
+
+<img src="assets/project-covers/alerte-ia-flow-rescue.png" alt="Alerte IA workflow illustration: audio, transcription and structured incident information for operator validation" width="280" />
+
+Software development for a collaborative emergency-call research prototype: collection and annotation tools, model integration, and an operator interface for transcription and structured incident information. The application combines a FastAPI backend with a Next.js/TypeScript frontend.
+
 ### [LIDAL Pulse](https://github.com/rayantr06/LIDALPulse)
 
 <img src="assets/project-covers/lidal-pulse.png" alt="LIDAL Pulse project illustration" width="280" />
@@ -19,12 +25,6 @@ A collaborative marketing intelligence application. My engineering work connects
 <img src="assets/project-covers/ouiagent.png" alt="OuiAgent project illustration" width="280" />
 
 A bilingual marketplace connecting clients with independent security agents. I contribute to the Next.js/React/TypeScript application, including agent discovery, booking and account workflows.
-
-### [Alerte IA](https://github.com/rayantr06/alerte-ia-prototype)
-
-<img src="assets/project-covers/alerte-ia-flow-rescue.png" alt="Alerte IA workflow illustration: audio, transcription and structured incident information for operator validation" width="280" />
-
-Software development for a collaborative emergency-call research prototype: collection and annotation tools, model integration, and an operator interface for transcription and structured incident information. The application combines a FastAPI backend with a Next.js/TypeScript frontend.
 
 ### [Safar](https://github.com/rayantr06/safar)
 
